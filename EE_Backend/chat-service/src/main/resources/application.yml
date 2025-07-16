@@ -1,0 +1,42 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: chat-service
+
+  config:
+    import: optional:configserver:http://config-server:8888
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mysql:3306/EcommerceDB
+    username: root
+    password: ecommerce123
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${random.uuid}
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka
+
+logging:
+  level:
+    # WebSocket y STOMP logs útiles para desarrollo
+    org.springframework.web.socket: DEBUG
+    org.springframework.messaging.simp: DEBUG
+    org.springframework.messaging.simp.broker: DEBUG
+    org.springframework.messaging.simp.stomp: DEBUG
+    # Hibernate en INFO para no saturar
+    org.hibernate.SQL: INFO
+    # Logs de tus propios controladores
+    com.chat_service: DEBUG

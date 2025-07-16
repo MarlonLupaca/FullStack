@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/api-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/auth-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/category-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chat-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/client-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/config-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/content-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/employee-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/event-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/orchestrator-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/order-pay-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/product-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/report-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

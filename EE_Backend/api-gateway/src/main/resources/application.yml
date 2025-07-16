@@ -1,0 +1,75 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gateway-service
+  config:
+    import: optional:configserver:http://config-server:8888
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: auth-service
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/auth/**
+
+        - id: client-service
+          uri: lb://CLIENT-SERVICE
+          predicates:
+            - Path=/customers/**
+
+        - id: orchestrator-service
+          uri: lb://ORCHESTRATOR-SERVICE
+          predicates:
+            - Path=/orchestrator/**
+
+        - id: event-service
+          uri: lb://EVENT-SERVICE
+          predicates:
+            - Path=/events/**
+
+        - id: product-service
+          uri: lb://PRODUCT-SERVICE
+          predicates:
+            - Path=/categories/**, /products/**, /reviews/**, /images/**
+
+        - id: content-service
+          uri: lb://CONTENT-SERVICE
+          predicates:
+            - Path=/blogs/**
+
+        - id: order-pay-service
+          uri: lb://ORDER-PAY-SERVICE
+          predicates:
+            - Path=/invoices/**
+
+        - id: chat-http
+          uri: lb://CHAT-SERVICE
+          predicates:
+            - Path=/chat/**,/chatvivo/**
+
+        - id: chat-ws
+          uri: lb://CHAT-SERVICE
+          predicates:
+            - Path=/ws-chat/**
+          metadata:
+            websocket:
+              enabled: true
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.springframework.web.cors: TRACE
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${random.uuid}
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka

@@ -1,0 +1,35 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: auth-service
+
+  # Config‑Server: usa el nombre del servicio (config-server) en lugar de localhost
+  config:
+    import: optional:configserver:http://config-server:8888
+
+  # Datasource: apunta al contenedor mysql (o deja que se sobreescriba por variables)
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mysql:3306/EcommerceDB?createDatabaseIfNotExist=true
+    username: root
+    password: ecommerce123 # mismo valor que pusiste en docker‑compose.yml
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+eureka:
+  instance:
+    prefer-ip-address: true # registra la IP real del contenedor
+    instance-id: ${spring.application.name}:${random.uuid}
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka

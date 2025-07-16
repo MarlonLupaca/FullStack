@@ -1,0 +1,32 @@
+.progress-wave {
+  width: 0%;
+  animation: progressWave 2s ease-in-out infinite;
+}
+
+.slide-bounce {
+  animation: slideBounce 3s ease-in-out infinite;
+}
+
+@keyframes progressWave {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 70%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+@keyframes slideBounce {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(calc(100% + 16px));
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

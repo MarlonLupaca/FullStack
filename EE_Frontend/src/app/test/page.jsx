@@ -1,0 +1,13 @@
+//page.jsx
+import Header from "../Components/Header";
+import UsContent from "./Content";
+
+export default async function Page() {
+    return (
+        <div>
+            <Header/>
+            {/*Programar apartir de aqui el contenido de Nosotros */}
+            <UsContent/>
+        </div>
+    )
+}

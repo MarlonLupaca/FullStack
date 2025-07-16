@@ -1,0 +1,29 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: order-pay-service
+
+  config:
+    import: optional:configserver:http://config-server:8888
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mysql:3306/EcommerceDB
+    username: root
+    password: ecommerce123
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${random.uuid}
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka

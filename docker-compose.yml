@@ -1,0 +1,139 @@
+version: '3.8'
+
+services:
+  # ─────────────── FRONTEND ───────────────
+  frontend:
+    build: ./EE_Frontend
+    ports:
+      - '3000:3000'
+    depends_on:
+      - api-gateway
+    environment:
+      - NEXT_PUBLIC_API_BASE_URL=http://api-gateway:8080
+    restart: unless-stopped
+
+  # ─────────────── BACKEND ────────────────
+  api-gateway:
+    build: ./EE_Backend/api-Gateway
+    ports:
+      - '8080:8080'
+    depends_on:
+      - eureka-server
+    restart: unless-stopped
+
+  auth-service:
+    build: ./EE_Backend/auth-service
+    ports:
+      - '8081:8081'
+    depends_on:
+      - mysql
+      - eureka-server
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/EcommerceDB?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=ecommerce123
+    restart: unless-stopped
+
+  chat-service:
+    build: ./EE_Backend/chat-service
+    ports:
+      - '8083:8083'
+    depends_on:
+      - mysql
+      - eureka-server
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/EcommerceDB?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=ecommerce123
+    restart: unless-stopped
+
+  client-service:
+    build: ./EE_Backend/client-service
+    ports:
+      - '8084:8084'
+    depends_on:
+      - mysql
+      - eureka-server
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/EcommerceDB?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=ecommerce123
+    restart: unless-stopped
+
+  eureka-server:
+    build: ./EE_Backend/eureka-server
+    ports:
+      - '8761:8761'
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost:8761/actuator/health']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  event-service:
+    build: ./EE_Backend/event-service
+    ports:
+      - '8087:8087'
+    depends_on:
+      - mysql
+      - eureka-server
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/EcommerceDB?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=ecommerce123
+    restart: unless-stopped
+
+  orchestrator-service:
+    build: ./EE_Backend/orchestrator-service
+    ports:
+      - '8099:8099'
+    depends_on:
+      - mysql
+      - eureka-server
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/EcommerceDB?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=ecommerce123
+    restart: unless-stopped
+
+  order-pay-service:
+    build: ./EE_Backend/order-pay-service
+    ports:
+      - '8088:8088'
+    depends_on:
+      - mysql
+      - eureka-server
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/EcommerceDB?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=ecommerce123
+    restart: unless-stopped
+
+  product-service:
+    build: ./EE_Backend/product-service
+    ports:
+      - '8089:8089'
+    depends_on:
+      - mysql
+      - eureka-server
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/EcommerceDB?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=ecommerce123
+    restart: unless-stopped
+
+  # ─────────────── MYSQL ────────────────
+  mysql:
+    image: mysql:8
+    ports:
+      - '3307:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: ecommerce123
+      MYSQL_DATABASE: EcommerceDB
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: unless-stopped
+
+volumes:
+  mysql_data:

@@ -1,0 +1,848 @@
+export const categories = ['Baño', 'Cocina', 'Energía', 'Limpieza', 'Cuidado personal'];
+
+// Lista de productos
+export const products = [
+  {
+    id: 1,
+    image: './Img/producto4.jpg',
+    name: 'Botella de Bambú Eco-friendly',
+    description:
+      'Botella elegante hecha de bambú sostenible con interior de acero inoxidable, tapa de rosca, y una capacidad de 500ml. Ideal para mantener tus bebidas a la temperatura deseada.',
+    longDescription:
+      'Nuestra botella premium de bambú sostenible combina elegancia, funcionalidad y compromiso ambiental. Fabricada con bambú de origen certificado y acero inoxidable 304 de grado alimenticio en su interior, mantiene tus bebidas frías durante 24 horas o calientes hasta 12 horas. El exterior natural de bambú proporciona un agarre cómodo y antideslizante. La tapa hermética con sello de silicona previene derrames y cuenta con un práctico asa para transportarla. Cada botella es única debido a las variaciones naturales del bambú. Libre de BPA, ftalatos y otras sustancias tóxicas.',
+    category: 'Cocina',
+    price: 18.99,
+    discount: '20%',
+    rating: 1.7,
+    reviewCount: 125,
+    stock: 45,
+    isNew: true,
+    materialInfo: 'Bambú sostenible y acero inoxidable',
+    dimensions: '22cm x 7cm',
+    weight: '320g',
+    capacity: '500ml',
+    care: 'Lavar a mano con agua tibia y jabón suave. No apta para lavavajillas o microondas.',
+    warranty: '1 año contra defectos de fabricación',
+    origin: 'Fabricado en Indonesia con bambú de cultivos sostenibles',
+    tags: ['sostenible', 'acero inoxidable', 'sin BPA', 'aislante térmico'],
+    highlights: [
+      'Mantiene bebidas frías durante 24 horas',
+      'Mantiene bebidas calientes hasta 12 horas',
+      'Exterior de bambú natural',
+      'Interior de acero inoxidable 304',
+    ],
+    reviews: [
+      {
+        user: 'María L.',
+        rating: 2,
+        date: '15/03/2025',
+        comment:
+          'La botella es bonita pero perdió el aislamiento después de un mes. Estoy decepcionada con la calidad.',
+        helpful: 45,
+      },
+      {
+        user: 'Carlos R.',
+        rating: 1,
+        date: '22/02/2025',
+        comment: 'El bambú exterior se agrietó a la semana de usarlo. No lo recomendaría a nadie.',
+        helpful: 38,
+      },
+      {
+        user: 'Ana T.',
+        rating: 3,
+        date: '10/04/2025',
+        comment: 'Me gusta el diseño pero la tapa gotea un poco. Espero que mejoren este detalle en futuras versiones.',
+        helpful: 12,
+      },
+    ],
+    relatedProducts: [6, 9, 3],
+  },
+  {
+    id: 2,
+    image: './Img/producto2.jpg',
+    name: 'Cepillos de Dientes de Bambú (Pack x4)',
+    description:
+      'Pack de 4 cepillos de dientes con mango de bambú y cerdas suaves biodegradables. Perfecto para toda la familia, con diferentes colores para identificar cada uno.',
+    longDescription:
+      'Nuestro pack familiar de cepillos de dientes ecológicos está diseñado para quienes buscan reducir su huella plástica sin comprometer la higiene dental. Cada set incluye 4 cepillos con mangos de bambú Moso de cultivo sostenible, identificados con diferentes colores naturales en la base para evitar confusiones. Las cerdas están hechas de nylon libre de BPA con puntas redondeadas para proteger tus encías y están infusionadas con carbón activado para una limpieza más profunda y control natural del mal aliento. El mango ergonómico proporciona un agarre cómodo y control preciso durante el cepillado. Al final de su vida útil, el mango es 100% compostable, mientras que las cerdas deben separarse para su correcto reciclaje.',
+    category: 'Baño',
+    price: 9.99,
+    discount: '15%',
+    rating: 4.6,
+    reviewCount: 89,
+    stock: 32,
+    isNew: false,
+    materialInfo: 'Mango de bambú Moso, cerdas de nylon libre de BPA',
+    dimensions: '19cm x 1.5cm cada cepillo',
+    weight: '15g por cepillo',
+    care: 'Enjuagar después de cada uso y almacenar en posición vertical para secar. Reemplazar cada 3 meses.',
+    warranty: 'Garantía de satisfacción de 30 días',
+    origin: 'Diseñado en España, fabricado con bambú de cultivos sostenibles en China',
+    tags: ['biodegradable', 'zero waste', 'vegano', 'sostenible'],
+    highlights: [
+      'Mango 100% biodegradable',
+      'Cerdas infusionadas con carbón activado',
+      'Identificación por colores para toda la familia',
+      'Embalaje de cartón reciclado y compostable',
+    ],
+    reviews: [
+      {
+        user: 'Pedro M.',
+        rating: 5,
+        date: '28/03/2025',
+        comment:
+          'Excelentes cepillos, llevamos 6 meses usándolos en familia y no volveremos a los plásticos. La limpieza es perfecta.',
+        helpful: 32,
+      },
+      {
+        user: 'Laura B.',
+        rating: 4,
+        date: '15/04/2025',
+        comment:
+          'Me encanta el concepto y la calidad. Solo quito una estrella porque el bambú tarda en secarse en ambientes húmedos.',
+        helpful: 18,
+      },
+      {
+        user: 'Miguel A.',
+        rating: 5,
+        date: '02/01/2025',
+        comment:
+          'Increíble relación calidad-precio. Las cerdas duran igual que las de un cepillo convencional y contribuimos al planeta.',
+        helpful: 27,
+      },
+    ],
+    relatedProducts: [8, 11, 4],
+  },
+  {
+    id: 3,
+    image: './Img/producto3.jpg',
+    name: 'Set de Bolsas Reutilizables para Compras',
+    description:
+      'Conjunto de 5 bolsas de malla transpirable en diferentes tamaños para frutas, verduras y alimentos a granel. Resistentes y lavables a máquina.',
+    longDescription:
+      'Este set premium de bolsas reutilizables para compras está diseñado para consumidores conscientes que buscan eliminar el plástico de un solo uso de su rutina diaria. El conjunto incluye 5 bolsas de malla transparente fabricadas con poliéster reciclado de alta resistencia: 2 pequeñas (30x20cm) ideales para frutos secos o especias, 2 medianas (30x35cm) perfectas para frutas y verduras medianas, y 1 grande (40x45cm) para productos voluminosos como lechuga o pan. Cada bolsa puede soportar hasta 3kg de peso y cuenta con un cordón ajustable y etiqueta de tara (peso de la bolsa) para facilitar el pesaje en la tienda. Las mallas son transpirables, permitiendo que los productos se mantengan frescos por más tiempo, y son lo suficientemente transparentes para que los cajeros identifiquen fácilmente el contenido. Son lavables a máquina y se pueden plegar hasta un tamaño mínimo para llevarlas siempre contigo.',
+    category: 'Cocina',
+    price: 12.49,
+    discount: 0,
+    rating: 4.8,
+    reviewCount: 67,
+    stock: 18,
+    isNew: false,
+    materialInfo: 'Poliéster reciclado certificado RPET',
+    dimensions: 'Pequeñas: 30x20cm, Medianas: 30x35cm, Grande: 40x45cm',
+    weight: '25g el set completo',
+    care: 'Lavables a máquina en ciclo suave o a mano. Secar al aire.',
+    warranty: 'Garantía de por vida contra defectos de fabricación',
+    origin: 'Fabricado en Portugal con materiales reciclados',
+    tags: ['zero waste', 'reciclado', 'compra sostenible', 'sin plástico'],
+    highlights: [
+      'Conjunto de 5 bolsas en 3 tamaños diferentes',
+      'Cordón ajustable y etiqueta de tara',
+      'Material transpirable que mantiene los alimentos frescos',
+      'Capacidad de hasta 3kg por bolsa',
+    ],
+    reviews: [
+      {
+        user: 'Cristina H.',
+        rating: 5,
+        date: '07/04/2025',
+        comment:
+          'Uso estas bolsas desde hace más de un año y siguen como el primer día. Son resistentes y perfectas para el mercado.',
+        helpful: 41,
+      },
+      {
+        user: 'David S.',
+        rating: 5,
+        date: '23/03/2025',
+        comment:
+          'La transparencia es perfecta para ver el contenido pero no excesiva. Los cajeros nunca tienen problemas con el pesaje.',
+        helpful: 19,
+      },
+      {
+        user: 'Elena P.',
+        rating: 4,
+        date: '30/01/2025',
+        comment:
+          'Me gustaría que incluyeran un pequeño estuche para guardarlas todas juntas. Por lo demás, son perfectas.',
+        helpful: 8,
+      },
+    ],
+    relatedProducts: [9, 5, 6],
+  },
+  {
+    id: 4,
+    image: './Img/producto1.jpg',
+    name: 'Papel Higiénico de Bambú (12 rollos)',
+    description:
+      'Pack de 12 rollos de papel higiénico ultra-suave fabricado con 100% bambú sin químicos blanqueadores. Suave con tu piel y con el planeta.',
+    longDescription:
+      'Nuestro papel higiénico premium de bambú representa una alternativa sostenible al papel convencional sin sacrificar la comodidad. Fabricado con 100% bambú de crecimiento rápido y cultivado de forma sostenible, este papel no contiene blanqueadores químicos, fragancias artificiales ni BPA. Cada rollo contiene 300 hojas de 3 capas que proporcionan resistencia y suavidad superior. El proceso de fabricación utiliza un 65% menos de agua que el papel tradicional y el bambú, al ser una gramínea de rápido crecimiento, captura más CO2 que los árboles convencionales. Los rollos vienen envueltos en papel kraft reciclado con tintas vegetales, eliminando completamente el plástico del empaquetado. Además, donamos el 5% de nuestras ganancias a proyectos de reforestación y conservación de bosques tropicales.',
+    category: 'Baño',
+    price: 24.99,
+    discount: '10%',
+    rating: 3.4,
+    reviewCount: 42,
+    stock: 23,
+    isNew: false,
+    materialInfo: '100% fibra de bambú sin blanqueadores químicos',
+    dimensions: '10cm x 10cm, 300 hojas por rollo',
+    weight: '125g por rollo',
+    care: 'Almacenar en lugar seco y fresco',
+    warranty: 'Garantía de satisfacción o devolución de dinero',
+    origin: 'Fabricado en Portugal con bambú cultivado sosteniblemente en China',
+    tags: ['sin plástico', 'biodegradable', 'vegano', 'no testado en animales'],
+    highlights: [
+      '300 hojas de triple capa por rollo',
+      'Sin blanqueadores ni químicos añadidos',
+      'Empaquetado 100% libre de plástico',
+      'Contribuye a proyectos de reforestación',
+    ],
+    reviews: [
+      {
+        user: 'Roberto L.',
+        rating: 2,
+        date: '13/02/2025',
+        comment: 'Demasiado fino para mi gusto y se deshace con facilidad. Prefiero otras marcas ecológicas.',
+        helpful: 15,
+      },
+      {
+        user: 'Carmen D.',
+        rating: 4,
+        date: '19/03/2025',
+        comment:
+          'Me gusta mucho el compromiso ecológico y el empaquetado. Es un poco más áspero que el papel normal, pero te acostumbras.',
+        helpful: 9,
+      },
+      {
+        user: 'Juan P.',
+        rating: 3,
+        date: '27/04/2025',
+        comment: 'El concepto es bueno pero los rollos son pequeños para el precio que tienen. Debería durar más.',
+        helpful: 22,
+      },
+    ],
+    relatedProducts: [2, 8, 11],
+  },
+  {
+    id: 5,
+    image: './Img/producto5.jpg',
+    name: 'Detergente Ecológico Concentrado',
+    description:
+      'Detergente líquido biodegradable en botella de vidrio recargable, con aceites esenciales naturales. Eficaz incluso en agua fría para ahorrar energía.',
+    longDescription:
+      'Nuestro detergente ecológico concentrado representa una revolución en la limpieza sostenible del hogar. Formulado con tensioactivos derivados del coco y aceites esenciales 100% naturales (lavanda y eucalipto), ofrece un poder limpiador excepcional incluso en ciclos cortos y con agua fría, reduciendo así el consumo energético. Su fórmula concentrada permite hasta 60 lavados con solo 1 litro de producto. No contiene fosfatos, blanqueadores ópticos, colorantes sintéticos, parabenos ni fragancias artificiales, haciéndolo hipoalergénico y seguro para pieles sensibles. La botella de vidrio ámbar protege el producto de la luz y puede devolverse para su rellenado con un 15% de descuento en la siguiente compra. La fórmula es biodegradable en más del 98% en 28 días y el tapón está fabricado con plástico oceánico reciclado.',
+    category: 'Limpieza',
+    price: 15.99,
+    discount: '25%',
+    rating: 4.5,
+    reviewCount: 56,
+    stock: 15,
+    isNew: true,
+    materialInfo: 'Ingredientes de origen vegetal y aceites esenciales. Botella de vidrio reciclado.',
+    dimensions: '22cm x 8cm (botella de 1L)',
+    weight: '1.2kg',
+    care: 'Almacenar en lugar fresco y seco. Mantener fuera del alcance de niños.',
+    warranty: 'Satisfacción garantizada o devolución del dinero',
+    origin: 'Fabricado en España con ingredientes de comercio justo',
+    tags: ['biodegradable', 'concentrado', 'sin fosfatos', 'hipoalergénico'],
+    highlights: [
+      'Fórmula concentrada para 60 lavados',
+      'Eficaz incluso en agua fría (20°C)',
+      'Botella de vidrio retornable y recargable',
+      'Fragancia natural de lavanda y eucalipto',
+    ],
+    reviews: [
+      {
+        user: 'Sofía R.',
+        rating: 5,
+        date: '02/04/2025',
+        comment:
+          'Increíble detergente que limpia mejor que las marcas convencionales. El aroma es sutil y agradable, no artificial como otros.',
+        helpful: 28,
+      },
+      {
+        user: 'Alberto M.',
+        rating: 4,
+        date: '15/02/2025',
+        comment:
+          'Funciona muy bien, aunque el precio es algo elevado. Valoro mucho el sistema de recarga y devolución de envases.',
+        helpful: 13,
+      },
+      {
+        user: 'Teresa L.',
+        rating: 5,
+        date: '19/03/2025',
+        comment:
+          'Tengo la piel muy sensible y este es el único detergente que no me causa alergias. Vale cada céntimo que cuesta.',
+        helpful: 31,
+      },
+    ],
+    relatedProducts: [10, 12, 8],
+  },
+  {
+    id: 6,
+    image: './Img/producto6.jpg',
+    name: 'Taza de Café de Fibra de Arroz',
+    description:
+      'Vaso para bebidas calientes fabricado con fibra de arroz y resina natural, con tapa de silicona reutilizable. Resistente al calor y apto para microondas.',
+    longDescription:
+      'Nuestra taza de café ecológica representa la perfecta fusión entre sostenibilidad y funcionalidad diaria. Fabricada con fibra de arroz y resina natural procedente de cáscaras de arroz recicladas (un subproducto agrícola que normalmente se desecha), esta taza tiene un impacto ambiental mínimo. Con una capacidad de 350ml, es perfecta para tu dosis diaria de café o té. La taza incluye una banda de silicona de grado alimenticio que protege tus manos del calor y una tapa hermética también de silicona que previene derrames y mantiene tu bebida caliente por más tiempo. Es apta para microondas (sin la tapa de silicona), resistente al lavavajillas (bandeja superior) y soporta temperaturas de hasta 120°C. Al final de su vida útil, la taza es biodegradable en condiciones de compostaje industrial. Disponible en cinco colores naturales, cada taza es ligeramente única debido a la naturaleza de sus materiales.',
+    category: 'Cocina',
+    price: 8.49,
+    discount: 0,
+    rating: 4.3,
+    reviewCount: 38,
+    stock: 27,
+    isNew: false,
+    materialInfo: 'Fibra de arroz, resina natural PLA y silicona de grado alimenticio',
+    dimensions: '15cm altura x 9cm diámetro',
+    weight: '150g',
+    capacity: '350ml',
+    care: 'Apta para lavavajillas (bandeja superior) y microondas (sin tapa). No usar en horno.',
+    warranty: '1 año de garantía contra defectos de fabricación',
+    origin: 'Diseñado en Dinamarca, fabricado en Vietnam con residuos agrícolas locales',
+    tags: ['biodegradable', 'reutilizable', 'microondas', 'lavavajillas'],
+    highlights: [
+      'Fabricada con residuos agrícolas reciclados',
+      'Banda y tapa de silicona de grado alimenticio',
+      'Apta para microondas y lavavajillas',
+      'Biodegradable al final de su vida útil',
+    ],
+    reviews: [
+      {
+        user: 'Marcos G.',
+        rating: 5,
+        date: '27/03/2025',
+        comment:
+          'Excelente taza, la uso todos los días para el café camino al trabajo. No transmite sabores y mantiene bien la temperatura.',
+        helpful: 17,
+      },
+      {
+        user: 'Lucía S.',
+        rating: 4,
+        date: '18/02/2025',
+        comment:
+          'Me encanta el concepto y el diseño. Le quito una estrella porque la tapa podría sellar mejor, pero en general estoy contenta.',
+        helpful: 9,
+      },
+      {
+        user: 'Héctor P.',
+        rating: 3,
+        date: '05/04/2025',
+        comment:
+          'La taza está bien, pero después de un mes de uso diario, la silicona ha perdido elasticidad. Esperaba mayor durabilidad.',
+        helpful: 12,
+      },
+    ],
+    relatedProducts: [1, 9, 3],
+  },
+  {
+    id: 7,
+    image: './Img/producto7.jpg',
+    name: 'Panel Solar Portátil USB',
+    description:
+      'Cargador solar compacto con puerto USB para dispositivos pequeños, ideal para excursiones y emergencias. Incluye batería de respaldo integrada.',
+    longDescription:
+      'Nuestro panel solar portátil es la solución perfecta para mantener tus dispositivos cargados cuando estás lejos de la red eléctrica. Con células solares monocristalinas de alta eficiencia (22% de conversión), este panel de 5W puede cargar directamente smartphones, GPS, auriculares y otros dispositivos USB pequeños bajo luz solar directa. También incorpora una batería de litio de 3000mAh que almacena energía para usar durante la noche o en días nublados. El diseño plegable (15x22cm cerrado, 30x22cm abierto) incluye 4 ojales reforzados para fijarlo fácilmente a mochilas o tiendas de campaña. La construcción robusta con tela de PET reciclado resistente al agua (IPX5) y conectores sellados lo hace ideal para condiciones adversas. El sistema de control inteligente protege tus dispositivos contra sobrecargas y cortocircuitos, mientras que los indicadores LED muestran el estado de carga y la batería restante.',
+    category: 'Energía',
+    price: 39.99,
+    discount: '5%',
+    rating: 4.6,
+    reviewCount: 31,
+    stock: 9,
+    isNew: true,
+    materialInfo: 'Células solares monocristalinas, batería de litio, tela PET reciclada resistente al agua',
+    dimensions: '15x22cm cerrado, 30x22cm abierto',
+    weight: '340g',
+    capacity: '5W de potencia solar, batería de 3000mAh',
+    care: 'Limpiar el panel con paño suave y seco. No sumergir en agua.',
+    warranty: '2 años contra defectos de fabricación',
+    origin: 'Diseñado en Alemania, ensamblado en China con componentes sostenibles',
+    tags: ['energía renovable', 'portátil', 'resistente al agua', 'carga rápida'],
+    highlights: [
+      'Panel solar de 5W con 22% de eficiencia',
+      'Batería de respaldo de 3000mAh',
+      'Diseño plegable y ligero de 340g',
+      'Resistente al agua IPX5',
+    ],
+    reviews: [
+      {
+        user: 'Raúl M.',
+        rating: 5,
+        date: '12/03/2025',
+        comment:
+          'Lo llevé de camping durante una semana y funcionó a la perfección. Cargó mi teléfono varias veces incluso con días parcialmente nublados.',
+        helpful: 21,
+      },
+      {
+        user: 'Patricia L.',
+        rating: 4,
+        date: '23/04/2025',
+        comment:
+          'La batería integrada es una gran ventaja. Solo le falta algún indicador más preciso del nivel de carga que los simples LEDs.',
+        helpful: 7,
+      },
+      {
+        user: 'Javier B.',
+        rating: 5,
+        date: '08/02/2025',
+        comment:
+          'Excelente para emergencias. Lo probé después de un corte de luz y pude mantener comunicación con mi familia durante todo el día.',
+        helpful: 16,
+      },
+    ],
+    relatedProducts: [1, 10, 5],
+  },
+  {
+    id: 8,
+    image: './Img/producto8.jpg',
+    name: 'Jabonera de Corcho Natural',
+    description:
+      'Jabonera elegante hecha de corcho natural que absorbe el agua y mantiene el jabón seco. Duradera y resistente al moho.',
+    longDescription:
+      'Nuestra jabonera de corcho natural reinventa un elemento básico del baño con un enfoque sostenible y funcional. Fabricada con corcho 100% natural procedente de alcornoques portugueses certificados FSC, esta jabonera aprovecha las propiedades naturales del material para absorber el exceso de agua, manteniendo tu jabón seco y prolongando su duración. A diferencia de las jaboneras convencionales donde el jabón se reblandece, el corcho elimina la humedad y previene el crecimiento de moho y bacterias. El diseño minimalista presenta una superficie ligeramente cóncava y ranuras que facilitan el drenaje y la circulación de aire. El corcho es naturalmente antideslizante, por lo que la jabonera permanece estable en superficies húmedas. Además, es resistente al agua y no se deteriora con el uso continuado en ambientes húmedos. Cada pieza es única debido a las variaciones naturales del corcho, aportando un toque artesanal a tu baño.',
+    category: 'Baño',
+    price: 6.99,
+    discount: 0,
+    rating: 4.9,
+    reviewCount: 47,
+    stock: 38,
+    isNew: false,
+    materialInfo: 'Corcho 100% natural certificado FSC',
+    dimensions: '12cm x 8cm x 2cm',
+    weight: '75g',
+    care: 'Limpiar con paño húmedo ocasionalmente. No sumergir en agua.',
+    warranty: 'Garantía de 5 años contra defectos de fabricación',
+    origin: 'Fabricado artesanalmente en Portugal con corcho local sostenible',
+    tags: ['sin plástico', 'biodegradable', 'artesanal', 'antibacteriano'],
+    highlights: [
+      'Absorbe el exceso de agua del jabón',
+      'Previene el crecimiento de moho y bacterias',
+      'Superficie antideslizante',
+      'Material biodegradable y renovable',
+    ],
+    reviews: [
+      {
+        user: 'Isabel R.',
+        rating: 5,
+        date: '04/03/2025',
+        comment:
+          'La mejor jabonera que he tenido. El jabón ya no se deshace y tengo que cambiarlo mucho menos frecuentemente. Excelente compra.',
+        helpful: 19,
+      },
+      {
+        user: 'Fernando T.',
+        rating: 5,
+        date: '19/04/2025',
+        comment:
+          'Elegante, funcional y sostenible. Además, no deja marcas en las superficies como las jaboneras de cerámica.',
+        helpful: 14,
+      },
+      {
+        user: 'Nuria M.',
+        rating: 5,
+        date: '27/02/2025',
+        comment:
+          'Llevo un año con esta jabonera y sigue como el primer día. El corcho no se deteriora ni se mancha con el uso continuo.',
+        helpful: 23,
+      },
+    ],
+    relatedProducts: [2, 4, 11],
+  },
+  {
+    id: 9,
+    image: './Img/producto1.jpg',
+    name: 'Set de Cubiertos de Bambú Portátil',
+    description:
+      'Juego completo de cubiertos reutilizables de bambú con estuche de tela. Incluye cuchillo, tenedor, cuchara y pajita con cepillo limpiador.',
+    longDescription:
+      'Nuestro set portátil de cubiertos de bambú es la alternativa perfecta a los utensilios plásticos desechables para personas con conciencia ecológica que comen fuera de casa. Fabricados con bambú Moso de cultivo sostenible, estos cubiertos son ligeros pero resistentes, y no imparten sabores a los alimentos. El set completo incluye un cuchillo con borde serrado suave, un tenedor de cuatro púas, una cuchara honda, una pajita reutilizable de bambú y un cepillo limpiador de fibra de coco. Todos los utensilios están pulidos con aceite de linaza natural y tienen un acabado suave que no astilla. El estuche de algodón orgánico certificado GOTS tiene compartimentos individuales para cada utensilio y se cierra con una cinta de algodón, haciendo que el conjunto sea compacto (20x7cm) y fácil de llevar en bolsos o mochilas. Los cubiertos son aptos para lavavajillas (bandeja superior) y tienen una vida útil estimada de 2-3 años con uso regular antes de ser completamente compostables.',
+    category: 'Cocina',
+    price: 11.99,
+    discount: '10%',
+    rating: 4.7,
+    reviewCount: 63,
+    stock: 22,
+    isNew: false,
+    materialInfo: 'Bambú Moso sostenible, algodón orgánico GOTS, fibra de coco',
+    dimensions: '20cm x 7cm (estuche cerrado)',
+    weight: '95g el set completo',
+    care: 'Lavar a mano o en lavavajillas (bandeja superior). Secar completamente. Aplicar aceite de linaza ocasionalmente.',
+    warranty: '1 año contra defectos de fabricación',
+    origin: 'Diseñado en España, fabricado artesanalmente en Vietnam',
+    tags: ['reutilizable', 'portátil', 'zero waste', 'compostable'],
+    highlights: [
+      'Set completo de 5 piezas incluye pajita y cepillo limpiador',
+      'Estuche de algodón orgánico con compartimentos',
+      'Ligero (95g) y compacto para llevar siempre contigo',
+      'Material naturalmente antibacteriano',
+    ],
+    reviews: [
+      {
+        user: 'Beatriz L.',
+        rating: 5,
+        date: '11/03/2025',
+        comment:
+          'Lo uso a diario en la oficina y es perfecto. El estuche mantiene todo organizado y limpio en mi bolso.',
+        helpful: 29,
+      },
+      {
+        user: 'Gabriel O.',
+        rating: 4,
+        date: '20/02/2025',
+        comment:
+          'Muy buen producto. El cuchillo podría ser un poco más afilado para cortes más duros, pero cumple perfectamente su función.',
+        helpful: 15,
+      },
+      {
+        user: 'Marina S.',
+        rating: 5,
+        date: '03/04/2025',
+        comment:
+          'Me encanta que incluya la pajita y el cepillo. Es un set muy completo y el bambú da un toque especial a las comidas.',
+        helpful: 22,
+      },
+    ],
+    relatedProducts: [3, 6, 1],
+  },
+  {
+    id: 10,
+    image: './Img/producto2.jpg',
+    name: 'Difusor de Aceites Esenciales de Cerámica',
+    description:
+      'Difusor artesanal de cerámica para aceites esenciales con luz LED de bajo consumo. Fabricado a mano con materiales sostenibles.',
+    longDescription:
+      'Este difusor de aceites esenciales combina artesanía tradicional con tecnología moderna para crear una experiencia sensorial completa. Cada pieza está elaborada a mano por artesanos ceramistas con arcilla local y esmaltada con productos naturales libres de plomo y otros metales pesados. Su diseño único permite la difusión por ultrasonido que convierte el agua y los aceites esenciales en una fina niebla sin calor, preservando todas las propiedades terapéuticas de los aceites. Cuenta con un sistema de iluminación LED de bajo consumo con 7 colores que pueden alternarse o fijarse según preferencias, creando un ambiente relajante. El difusor tiene una capacidad de 300ml que permite hasta 10 horas de funcionamiento continuo, con apagado automático cuando el agua se agota. Dispone de 3 modos de temporización (1h, 3h, continuo) y 2 intensidades de nebulización. Su funcionamiento silencioso (menos de 25dB) lo hace ideal para dormitorios, yoga o meditación. El diseño incluye una tapa interior que previene derrames accidentales.',
+    category: 'Cuidado personal',
+    price: 29.99,
+    discount: '15%',
+    rating: 4.8,
+    reviewCount: 79,
+    stock: 7,
+    isNew: true,
+    materialInfo: 'Cerámica artesanal, componentes electrónicos de bajo consumo',
+    dimensions: '15cm diámetro x 18cm altura',
+    weight: '650g',
+    capacity: '300ml',
+    care: 'Limpiar con paño húmedo y vinagre diluido ocasionalmente. Vaciar y secar cuando no se use.',
+    warranty: '2 años en componentes eléctricos, cerámica garantizada contra defectos',
+    origin: 'Cerámica fabricada artesanalmente en España, componentes electrónicos ensamblados en UE',
+    tags: ['aromaterapia', 'hecho a mano', 'bajo consumo', 'silencioso'],
+    highlights: [
+      'Difusión por ultrasonido sin calor',
+      '7 colores LED con intensidad ajustable',
+      'Hasta 10 horas de funcionamiento continuo',
+      'Apagado automático de seguridad',
+    ],
+    reviews: [
+      {
+        user: 'Diana P.',
+        rating: 5,
+        date: '17/03/2025',
+        comment:
+          'Una pieza de arte funcional. La calidad de la cerámica es excepcional y la difusión es perfecta, llena la habitación sin ser abrumadora.',
+        helpful: 34,
+      },
+      {
+        user: 'Antonio R.',
+        rating: 5,
+        date: '25/02/2025',
+        comment:
+          'Lo compré para mi consulta de terapia y los clientes siempre lo elogian. La función de temporizador es muy práctica.',
+        helpful: 19,
+      },
+      {
+        user: 'Marta S.',
+        rating: 4,
+        date: '08/04/2025',
+        comment:
+          'El difusor es precioso y funciona muy bien. Solo le quito una estrella porque el cable podría ser más largo para mayor flexibilidad.',
+        helpful: 12,
+      },
+    ],
+    relatedProducts: [12, 11, 5],
+  },
+  {
+    id: 11,
+    image: './Img/producto3.jpg',
+    name: 'Champú Sólido Natural',
+    description:
+      'Champú en barra sin sulfatos ni conservantes artificiales. Equivale a tres botellas de champú líquido, reduciendo residuos plásticos.',
+    longDescription:
+      'Nuestro champú sólido representa la fusión perfecta entre sostenibilidad y cuidado capilar de alta calidad. Formulado con tensioactivos suaves derivados del coco, manteca de karité orgánica, aceite de argán y proteínas de quinoa hidrolizadas, este champú limpia profundamente sin eliminar los aceites naturales del cabello. La barra de 70g equivale aproximadamente a 3 botellas de 250ml de champú líquido, con una duración estimada de 80-100 lavados según la longitud y tipo de cabello. No contiene sulfatos, parabenos, siliconas, conservantes artificiales ni fragancias sintéticas, solo aceites esenciales naturales de naranja y lavanda que proporcionan una experiencia aromática sutil. Su pH balanceado (5.5) respeta el equilibrio natural del cuero cabelludo, reduciendo la irritación y el encrespamiento. La formulación biodegradable se deshace completamente en aguas residuales sin dejar microplásticos. Viene envuelto en papel de semillas plantable con instrucciones de uso impresas con tinta vegetal.',
+    category: 'Cuidado personal',
+    price: 10.49,
+    discount: 0,
+    rating: 4.5,
+    reviewCount: 93,
+    stock: 0,
+    isNew: false,
+    materialInfo: 'Tensioactivos vegetales, manteca de karité orgánica, aceite de argán, proteínas de quinoa',
+    dimensions: '6cm x 5cm x 2cm',
+    weight: '70g',
+    care: 'Guardar en jabonera seca entre usos. Evitar exposición prolongada al agua.',
+    warranty: '100% satisfacción garantizada',
+    origin: 'Elaborado artesanalmente en España con ingredientes de comercio justo',
+    tags: ['zero waste', 'vegano', 'sin sulfatos', 'comercio justo'],
+    highlights: [
+      'Equivale a 3 botellas de champú líquido',
+      'Hasta 100 lavados por barra',
+      'pH balanceado para cuero cabelludo sensible',
+      'Empaquetado en papel plantable con semillas',
+    ],
+    reviews: [
+      {
+        user: 'Silvia M.',
+        rating: 5,
+        date: '12/03/2025',
+        comment:
+          'Llevo 6 meses usando este champú y mi cabello nunca ha estado mejor. Menos encrespamiento y más brillo natural.',
+        helpful: 37,
+      },
+      {
+        user: 'Carlos G.',
+        rating: 4,
+        date: '19/04/2025',
+        comment:
+          'Al principio cuesta acostumbrarse, pero una vez que aprendes a usarlo es fantástico. Dura muchísimo más que el champú líquido.',
+        helpful: 24,
+      },
+      {
+        user: 'Alicia P.',
+        rating: 5,
+        date: '03/02/2025',
+        comment:
+          'Lo compré porque tengo dermatitis y es el único que no me irrita el cuero cabelludo. El aroma es suave y agradable.',
+        helpful: 29,
+      },
+    ],
+    relatedProducts: [12, 10, 2],
+  },
+  {
+    id: 12,
+    image: './Img/producto4.jpg',
+    name: 'Esponja Vegetal Konjac',
+    description:
+      'Esponja 100% vegetal para limpieza facial, elaborada con raíz de konjac. Suave, biodegradable y libre de toxinas.',
+    longDescription:
+      'Nuestra esponja facial de Konjac es un producto de cuidado personal ancestral originario de Asia, actualizado para las necesidades modernas de limpieza facial sostenible. Fabricada 100% con fibra de raíz de konjac cultivada sin pesticidas ni productos químicos, esta esponja naturalmente alcalina ayuda a equilibrar el pH de la piel mientras elimina suavemente impurezas, células muertas y exceso de sebo. Su textura única se vuelve increíblemente suave al contacto con agua, convirtiéndola en el exfoliante perfecto incluso para pieles sensibles, con rosácea o acné. Inicialmente dura, la esponja se expande y suaviza al humedecerse, adaptándose perfectamente a los contornos del rostro. Puede usarse sola para una limpieza suave o con una pequeña cantidad de limpiador para potenciar sus efectos. Rica en minerales, es 100% biodegradable y compostable al final de su vida útil (2-3 meses con uso diario). Viene con un cordón de algodón orgánico para colgarla entre usos y una bolsita de malla para su almacenamiento.',
+    category: 'Cuidado personal',
+    price: 5.99,
+    discount: '5%',
+    rating: 4.4,
+    reviewCount: 51,
+    stock: 16,
+    isNew: false,
+    materialInfo: '100% fibra de raíz de konjac, cuerda de algodón orgánico',
+    dimensions: '7.5cm diámetro x 2.5cm grosor (seca)',
+    weight: '30g (seca), 90g (húmeda)',
+    care: 'Enjuagar después de cada uso y colgar para secar. Esterilizar semanalmente en agua hirviendo durante 1-2 minutos.',
+    warranty: 'Satisfacción garantizada o devolución',
+    origin: 'Cultivada orgánicamente y procesada en Japón',
+    tags: ['zero waste', 'vegano', 'biodegradable', 'exfoliante natural'],
+    highlights: [
+      'Limpieza facial diaria sin productos químicos',
+      'pH alcalino que equilibra la piel',
+      'Exfoliación suave para pieles sensibles',
+      '100% biodegradable y compostable',
+    ],
+    reviews: [
+      {
+        user: 'Paula F.',
+        rating: 5,
+        date: '23/03/2025',
+        comment:
+          'Increíble para mi piel sensible. Limpia profundamente sin irritar y ha reducido mis brotes de acné considerablemente.',
+        helpful: 21,
+      },
+      {
+        user: 'Daniel M.',
+        rating: 4,
+        date: '17/02/2025',
+        comment:
+          'La uso por las mañanas y mi piel se siente fresca y limpia. Dura menos de lo esperado, pero sigue siendo una buena compra.',
+        helpful: 9,
+      },
+      {
+        user: 'Clara S.',
+        rating: 4,
+        date: '05/04/2025',
+        comment:
+          'Excelente esponja, aunque requiere cuidados para que dure (colgarla para que seque bien). El resultado en la piel vale la pena.',
+        helpful: 14,
+      },
+    ],
+    relatedProducts: [11, 10, 2],
+  },
+  {
+    id: 13,
+    image: './Img/producto4.jpg',
+    name: 'Cepillo de Dientes de Bambú para Niños',
+    description:
+      'Cepillo de dientes infantil con mango ergonómico de bambú y cerdas suaves biodegradables. Diseñado especialmente para los más pequeños.',
+    longDescription:
+      'Nuestro cepillo de dientes infantil de bambú combina sostenibilidad con un diseño especialmente pensado para niños a partir de 3 años. Fabricado con bambú Moso de cultivo sostenible, el mango tiene un tamaño y forma ergonómicos para manos pequeñas, con un acabado suave y pulido que previene astillas. Las cerdas extra suaves de nylon libre de BPA están diseñadas específicamente para encías y dientes infantiles sensibles, con puntas redondeadas para prevenir daños en las encías. El cepillo viene con un sistema de personalización divertido: cada pack incluye adhesivos no tóxicos lavables y resistentes al agua para que los niños decoren su cepillo, aumentando su interés por la higiene dental. La base del mango está coloreada con tintes naturales en 4 colores diferentes (azul, verde, rosa o amarillo) para identificar fácilmente el cepillo de cada niño. Al final de su vida útil, el mango es 100% compostable, mientras que las cerdas deben separarse para reciclaje. Cada cepillo viene en un empaque de cartón reciclado con instrucciones de cepillado ilustradas para niños.',
+    category: 'Baño',
+    price: 4.99,
+    discount: '10%',
+    rating: 4.7,
+    reviewCount: 42,
+    stock: 25,
+    isNew: false,
+    materialInfo: 'Bambú Moso sostenible, cerdas de nylon vegetal libre de BPA',
+    dimensions: '15cm x 1.2cm',
+    weight: '10g',
+    care: 'Enjuagar después de cada uso y almacenar en posición vertical para secar. Reemplazar cada 3 meses.',
+    warranty: 'Garantía de satisfacción infantil - si no les gusta, devolución completa',
+    origin: 'Diseñado en España, fabricado con bambú de cultivos sostenibles en China',
+    tags: ['infantil', 'biodegradable', 'ergonómico', 'educativo'],
+    highlights: [
+      'Diseño ergonómico para manos pequeñas',
+      'Cerdas extra suaves para encías sensibles',
+      'Sistema de personalización con adhesivos',
+      'Embalaje educativo con instrucciones de cepillado',
+    ],
+    reviews: [
+      {
+        user: 'Laura H. (madre)',
+        rating: 5,
+        date: '15/03/2025',
+        comment:
+          'Mi hijo de 4 años está encantado con su cepillo "como el de papá" y los adhesivos fueron un éxito total. Ahora se cepilla sin protestar.',
+        helpful: 28,
+      },
+      {
+        user: 'Rodrigo B. (padre)',
+        rating: 5,
+        date: '27/02/2025',
+        comment:
+          'Excelente producto para iniciar a los niños en hábitos sostenibles. Las cerdas son perfectas para sus encías sensibles.',
+        helpful: 17,
+      },
+      {
+        user: 'María J. (madre)',
+        rating: 4,
+        date: '05/04/2025',
+        comment:
+          'A mis gemelos les encantan. Solo sugeriría incluir más opciones de adhesivos para personalizarlos mejor.',
+        helpful: 9,
+      },
+    ],
+    relatedProducts: [2, 4, 8],
+  },
+  {
+    id: 14,
+    image: './Img/producto4.jpg',
+    name: 'Bolsa Isotérmica Sostenible',
+    description:
+      'Bolsa térmica fabricada con materiales reciclados y aislamiento natural. Mantiene alimentos y bebidas fríos o calientes hasta 6 horas.',
+    longDescription:
+      'Nuestra bolsa isotérmica sostenible representa una alternativa ecológica a las tradicionales bolsas térmicas de materiales sintéticos. El exterior está fabricado con algodón orgánico certificado GOTS reciclado de residuos textiles y tratado con cera de abeja natural que proporciona resistencia al agua. El aislamiento interior utiliza una innovadora combinación de fibra de cáñamo y lana de oveja reciclada, materiales naturales con excelentes propiedades aislantes que mantienen los alimentos fríos hasta 6 horas o calientes hasta 4 horas. Con una capacidad de 8 litros, es perfecta para llevar comida al trabajo, picnics o compras en el mercado. El diseño incluye un bolsillo exterior, asas reforzadas que soportan hasta 5kg, y un cierre superior con cremallera YKK reciclada y solapa protectora para máximo aislamiento. La bolsa es fácil de limpiar gracias a su forro interior extraíble y lavable fabricado con tela de algodón recubierta de almidón de maíz biodegradable. Disponible en tres estampados de tintes naturales: rayas azules, hojas verdes o geométrico terracota.',
+    category: 'Cocina',
+    price: 28.99,
+    discount: '15%',
+    rating: 4.6,
+    reviewCount: 37,
+    stock: 13,
+    isNew: true,
+    materialInfo:
+      'Exterior de algodón orgánico reciclado, aislamiento de cáñamo y lana, forro lavable de algodón con recubrimiento de almidón',
+    dimensions: '30cm x 25cm x 17cm',
+    weight: '420g',
+    capacity: '8 litros',
+    care: 'Limpiar con paño húmedo. Forro interior extraíble lavable a mano con jabón suave.',
+    warranty: '1 año contra defectos de fabricación',
+    origin: 'Diseñada y fabricada en Portugal con materiales europeos reciclados',
+    tags: ['isotérmica', 'materiales naturales', 'reciclada', 'picnic'],
+    highlights: [
+      'Aislamiento térmico 100% natural',
+      'Mantiene temperatura hasta 6 horas',
+      'Forro interior extraíble y lavable',
+      'Exterior resistente al agua con cera de abeja',
+    ],
+    reviews: [
+      {
+        user: 'Alejandro T.',
+        rating: 5,
+        date: '18/03/2025',
+        comment:
+          'Perfecta para llevar mi comida a la oficina. Mantiene la temperatura sorprendentemente bien y el diseño es muy elegante.',
+        helpful: 19,
+      },
+      {
+        user: 'Lucía R.',
+        rating: 4,
+        date: '25/02/2025',
+        comment:
+          'Muy buena bolsa, resistente y bonita. Echo en falta algún compartimento interior para organizar mejor los alimentos.',
+        helpful: 11,
+      },
+      {
+        user: 'Pablo S.',
+        rating: 5,
+        date: '07/04/2025',
+        comment:
+          'La uso para comprar productos frescos en el mercado y funciona perfectamente. El aislamiento natural funciona mejor que mis antiguas bolsas sintéticas.',
+        helpful: 16,
+      },
+    ],
+    relatedProducts: [3, 9, 6],
+  },
+  {
+    id: 15,
+    image: './Img/producto4.jpg',
+    name: 'Lámpara Solar de Mesa',
+    description:
+      'Lámpara de mesa alimentada por energía solar con diseño minimalista de bambú y cristal reciclado. Perfecta para interiores y exteriores.',
+    longDescription:
+      'Nuestra lámpara solar de mesa combina diseño contemporáneo, artesanía tradicional y tecnología limpia para crear una pieza de iluminación versátil y sostenible. La base está elaborada con bambú macizo tratado naturalmente para resistir la humedad y los cambios de temperatura, mientras que la pantalla está fabricada con vidrio reciclado soplado artesanalmente, creando un efecto visual único en cada pieza. El panel solar integrado discretamente en la parte superior captura energía durante el día (incluso con luz interior) para alimentar los LEDs de temperatura cálida (2700K) durante hasta 8 horas con carga completa. La batería de litio de 2000mAh es reemplazable y reciclable, extendiendo la vida útil del producto. La lámpara ofrece tres niveles de intensidad luminosa mediante un simple toque en la base, y un sensor crepuscular opcional que activa la lámpara automáticamente al anochecer. Su diseño compacto (25cm altura x 15cm diámetro) y autonomía la hacen ideal tanto para interiores como para iluminar cenas en terrazas o jardines. Incluye también un puerto USB-C para carga de emergencia en días con poca luz.',
+    category: 'Energía',
+    price: 49.99,
+    discount: '10%',
+    rating: 4.8,
+    reviewCount: 29,
+    stock: 8,
+    isNew: true,
+    materialInfo:
+      'Base de bambú sostenible, pantalla de vidrio reciclado, panel solar monocristalino, batería de litio reemplazable',
+    dimensions: '25cm altura x 15cm diámetro',
+    weight: '750g',
+    care: 'Limpiar con paño seco. Mantener el panel solar limpio para máxima eficiencia.',
+    warranty: '2 años en componentes eléctricos, garantía de por vida en materiales',
+    origin: 'Diseñada en Dinamarca, base de bambú de Indonesia, vidrio reciclado artesanal de Italia',
+    tags: ['energía solar', 'iluminación LED', 'decorativa', 'interior-exterior'],
+    highlights: [
+      'Autonomía de hasta 8 horas con carga completa',
+      'Tres niveles de intensidad luminosa',
+      'Vidrio reciclado soplado artesanalmente',
+      'Sensor crepuscular automático opcional',
+    ],
+    reviews: [
+      {
+        user: 'Victoria M.',
+        rating: 5,
+        date: '10/03/2025',
+        comment:
+          'Preciosa lámpara que combina perfectamente en mi salón. Me encanta no depender de cables ni enchufes y la luz cálida es muy acogedora.',
+        helpful: 23,
+      },
+      {
+        user: 'Jorge L.',
+        rating: 5,
+        date: '19/04/2025',
+        comment:
+          'La tengo en mi terraza y funciona de maravilla. Ha resistido incluso un par de lluvias leves sin problemas.',
+        helpful: 14,
+      },
+      {
+        user: 'Sandra P.',
+        rating: 4,
+        date: '27/02/2025',
+        comment:
+          'Luz muy agradable y diseño elegante. En invierno con menos horas de sol hay que cargarla ocasionalmente por USB, pero sigue siendo muy práctica.',
+        helpful: 9,
+      },
+    ],
+    relatedProducts: [7, 10, 6],
+  },
+];

@@ -61,11 +61,11 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f0e9e9] via-[#f5f0f0] to-[#ede4e4] flex">
+    <div className="min-h-screen bg-gradient-to-br from-[#f0e9e9] via-[#f5f0f0] to-[#ede4e4] flex pt-10">
       {/* Sección de la imagen - Lado izquierdo */}
       <div className="hidden lg:flex lg:w-1/2 relative items-center justify-center p-8 ">
         <div className="relative flex flex-col justify-center items-center">
-          <p className="text-4xl font-extrabold text-gray-900 mb-2">Crea tu cuenta</p>
+          <p className="text-4xl font-extrabold text-gray-900 mb-2">Regístrate</p>
           <p className="text-lg text-gray-600 mb-14">
             ¿Ya tienes una cuenta?{' '}
             <Link href="/login" className="z-20 relative">
@@ -86,6 +86,19 @@ export default function Register() {
       {/* Sección del formulario - Lado derecho */}
       <div className="w-full lg:w-1/2 flex items-center justify-start p-4 sm:p-6 lg:p-8">
         <div className="w-full max-w-2xl">
+          {/* Título y texto para móvil */}
+          <div className="lg:hidden text-center mb-8">
+            <p className="text-3xl font-extrabold text-gray-900 mb-2">Regístrate</p>
+            <p className="text-base text-gray-600">
+              ¿Ya tienes una cuenta?{' '}
+              <Link href="/login">
+                <span className="font-semibold text-primary hover:text-secondary cursor-pointer transition-colors duration-200 hover:underline">
+                  Inicia sesión
+                </span>
+              </Link>
+            </p>
+          </div>
+
           {/* Formulario */}
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl border border-white/20 p-8">
             {error && (
@@ -159,7 +172,7 @@ export default function Register() {
                 />
                 <label htmlFor="terms" className="text-sm text-gray-700 leading-relaxed">
                   Acepto los{' '}
-                  <Link href="/terms">
+                  <Link href="#">
                     <span className="font-semibold text-secondary hover:text-primary cursor-pointer transition-colors duration-200 hover:underline">
                       términos y condiciones
                     </span>

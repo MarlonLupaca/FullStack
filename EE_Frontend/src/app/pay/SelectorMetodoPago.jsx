@@ -47,7 +47,7 @@ const SelectorMetodoPago = ({ metodoPago, onMetodoPagoChange }) => {
   const metodoSeleccionado = metodosDePago.find((m) => m.id === metodoPago);
 
   return (
-    <div className="mb-6 relative w-[40vw] px-1">
+    <div className="mb-6 relative w-[200px] px-1">
       <p className="text-sm font-medium text-black mb-2">Método de pago</p>
 
       {/* Caja seleccionada tipo select */}

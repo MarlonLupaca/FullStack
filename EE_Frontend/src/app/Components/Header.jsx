@@ -198,11 +198,16 @@ const Header = () => {
                 <Link href="/us">Nosotros</Link>
               </li>
               {token ? (
-                <li>
-                  <button onClick={handleLogout} className="w-full text-left">
-                    Cerrar Sesión
-                  </button>
-                </li>
+                <>
+                  <li>
+                    <Link href="/orders">Mis pedidos</Link>
+                  </li>
+                  <li>
+                    <button onClick={handleLogout} className="w-full text-left">
+                      Cerrar Sesión
+                    </button>
+                  </li>
+                </>
               ) : (
                 <li>
                   <Link href="/login">Login</Link>

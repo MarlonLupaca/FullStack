@@ -15,8 +15,8 @@ const FormularioTarjetaCredito = ({ formularioTarjeta: initialTarjeta, onTarjeta
   };
 
   return (
-    <div className="p-6 bg-white shadow-lg rounded-2xl border border-gray-200 w-[580px] m-auto mb-6">
-      <p className="text-xl font-bold text-teal-700 mb-6 border-b pb-2">Detalles de la tarjeta</p>
+    <div className="p-4 sm:p-6 bg-white shadow-lg rounded-2xl border border-gray-200 w-full max-w-md sm:max-w-lg mx-auto mb-6">
+      <p className="text-lg sm:text-xl font-bold text-teal-700 mb-4 sm:mb-6 border-b pb-2">Detalles de la tarjeta</p>
 
       <div className="space-y-4">
         <div>
@@ -27,7 +27,7 @@ const FormularioTarjetaCredito = ({ formularioTarjeta: initialTarjeta, onTarjeta
             value={formularioTarjeta.numero}
             onChange={handleChange}
             placeholder="•••• •••• •••• ••••"
-            className="w-full border border-gray-300 rounded-xl px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition"
+            className="w-full border border-gray-300 rounded-xl px-4 py-2 sm:py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition text-sm sm:text-base"
           />
         </div>
 
@@ -39,11 +39,11 @@ const FormularioTarjetaCredito = ({ formularioTarjeta: initialTarjeta, onTarjeta
             value={formularioTarjeta.nombre}
             onChange={handleChange}
             placeholder="Nombre completo"
-            className="w-full border border-gray-300 rounded-xl px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition"
+            className="w-full border border-gray-300 rounded-xl px-4 py-2 sm:py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition text-sm sm:text-base"
           />
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Fecha de expiración</label>
             <input
@@ -52,7 +52,7 @@ const FormularioTarjetaCredito = ({ formularioTarjeta: initialTarjeta, onTarjeta
               value={formularioTarjeta.fechaExp}
               onChange={handleChange}
               placeholder="MM/AA"
-              className="w-full border border-gray-300 rounded-xl px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition"
+              className="w-full border border-gray-300 rounded-xl px-4 py-2 sm:py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition text-sm sm:text-base"
             />
           </div>
           <div>
@@ -63,7 +63,7 @@ const FormularioTarjetaCredito = ({ formularioTarjeta: initialTarjeta, onTarjeta
               value={formularioTarjeta.cvv}
               onChange={handleChange}
               placeholder="123"
-              className="w-full border border-gray-300 rounded-xl px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition"
+              className="w-full border border-gray-300 rounded-xl px-4 py-2 sm:py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition text-sm sm:text-base"
             />
           </div>
         </div>

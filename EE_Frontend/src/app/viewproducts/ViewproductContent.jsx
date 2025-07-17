@@ -123,7 +123,7 @@ const ViewproductContent = ({ code }) => {
   const discountPercentage = Math.round((discountAmount / productfind.priceBeforeDiscount) * 100);
 
   return (
-    <div className="bg-tertiary min-h-screen px-20 ">
+    <div className="bg-tertiary min-h-screen lg:px-20 lg:py-5">
       <ProductBreadcrumbs category={productfind.category} name={productfind.name} />
 
       {addedToCart && (
@@ -159,7 +159,7 @@ const ViewproductContent = ({ code }) => {
           </div>
           <div className="lg:w-1/2 space-y-6">
             <ProductImageGallery product={productfind} />
-            <div className="container mx-auto py-8 px-6 lg:px-0 ">
+            <div className="container mx-auto py-8  lg:px-0 ">
               <div className="bg-white rounded-xl shadow-sm p-6 py-8">
                 <p className="text-2xl font-bold text-gray-800 mb-6 px-4">Valoraciones y comentarios</p>
                 <CommentList

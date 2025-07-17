@@ -9,7 +9,7 @@ const InformacionPagoYape = () => {
   };
 
   return (
-    <div className="py-10 pb-20 mb-5  w-[30vw] m-auto shadow-md px-10 border-t-10 border-[#5F0672] rounded-lg">
+    <div className="py-10 pb-20 mb-5  lg:w-[30vw] m-auto shadow-md px-10 border-t-10 border-[#5F0672] rounded-lg">
       <div className=" flex justify-center items-center h-30 mb-10">
         <img src="./Img/yape.png" alt="yape" className="h-full" />
       </div>

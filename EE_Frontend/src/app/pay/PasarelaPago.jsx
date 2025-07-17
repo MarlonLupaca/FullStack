@@ -87,7 +87,7 @@ const PasarelaPago = () => {
       direccion.codigoPostal,
     ]
       .map((campo) => campo?.trim())
-      .filter(Boolean) // Elimina campos vacíos
+      .filter(Boolean)
       .join(', ');
 
     const invoicePayload = {
@@ -122,27 +122,25 @@ const PasarelaPago = () => {
     }
   };
 
-  // Renderiza el componente de éxito si el pago fue exitoso
   if (exito) {
-    // Pasa el número de serie de la factura al componente de éxito.
     return <MensajeExitoPago orderNumber={numeroSerieFactura} />;
   }
 
   return (
-    <div className="fixed inset-0 bg-tertiary min-h-screen px-10">
+    <div className="fixed inset-0 bg-tertiary min-h-screen overflow-y-auto px-4 sm:px-6 lg:px-10">
       <div className="absolute top-0 left-0 w-[50px] h-[35px] flex justify-center items-center bg-teal-600 text-white text-[20px]">
         <Link href="/" className="p-1 px-3">
           <FaArrowLeftLong />
         </Link>
       </div>
-      <div className="container mx-auto py-6 px-4 ">
-        <div className="flex flex-col h-full ">
+      <div className="container mx-auto py-6 px-2 sm:px-4">
+        <div className="flex flex-col h-full">
           <ProgressBar paso={paso} onPasoChange={handleCambioPaso} />
-
-          <div className="md:flex md:gap-8 ">
-            <ResumenCompra productos={products} subtotal={subtotal} envio={envio} total={total} />
-
-            <div className="md:w-3/5 bg-white p-6 rounded-lg shadow-sm h-[75vh] overflow-y-auto py-8 px-10">
+          <div className="flex flex-col lg:flex-row lg:gap-8 gap-4">
+            <div className="order-1 w-full lg:w-2/5">
+              <ResumenCompra productos={products} subtotal={subtotal} envio={envio} total={total} />
+            </div>
+            <div className="order-2 w-full lg:w-3/5 bg-white p-4 sm:p-6 lg:p-8 xl:p-10 rounded-lg shadow-sm h-fit sm:h-[70vh] lg:h-[75vh] overflow-y-auto">
               {paso === 1 && (
                 <FormularioDireccion
                   direccion={direccion}
@@ -166,22 +164,23 @@ const PasarelaPago = () => {
                     {metodoPago === 'pagoefectivo' && <InformacionPagoEfectivo total={total} />}
                   </div>
 
-                  <div className="flex space-x-4 justify-end pr-10">
+                  <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 justify-center sm:justify-end pr-0 sm:pr-10">
                     <button
                       onClick={() => handleCambioPaso(1)}
-                      className="w-fit bg-gray-200 text-gray-800 py-2 px-6 rounded-lg font-medium hover:bg-gray-300 transition duration-200"
+                      className="w-full sm:w-fit bg-gray-200 text-gray-800 py-2 px-6 rounded-lg font-medium hover:bg-gray-300 transition duration-200"
                     >
                       Atrás
                     </button>
                     <button
                       onClick={() => handleCambioPaso(3)}
-                      className="w-fit bg-teal-600 text-white py-2 px-6 rounded-lg font-medium hover:bg-teal-700 transition duration-200"
+                      className="w-full sm:w-fit bg-teal-600 text-white py-2 px-6 rounded-lg font-medium hover:bg-teal-700 transition duration-200"
                     >
                       Continuar
                     </button>
                   </div>
                 </div>
               )}
+
               {paso === 3 && (
                 <ConfirmarPedido
                   direccion={direccion}
@@ -191,11 +190,11 @@ const PasarelaPago = () => {
                   total={total}
                   formularioTarjeta={formularioTarjeta}
                   onBack={() => handleCambioPaso(2)}
-                  onConfirm={procesarPago} // Llama a la función procesarPago al confirmar
+                  onConfirm={procesarPago}
                   cargando={cargando}
                 />
               )}
-              {/* Muestra un mensaje de error si existe */}
+
               {error && (
                 <div
                   className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-4"

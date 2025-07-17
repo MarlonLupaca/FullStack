@@ -3,7 +3,7 @@
 import { User, Mail, Rocket, Lock, Hand } from 'lucide-react';
 
 const ChatForm = ({ name, setName, email, setEmail, isSubmitting, onSubmit }) => (
-  <div className="p-8 rounded-b-2xl bg-[url(/back/garras.svg)] shadow-lg border border-teal-200 ">
+  <div className="p-8 rounded-b-2xl bg-[url(/back/garras.svg)] shadow-lg border border-teal-200">
     <div className="mb-6">
       <h2 className="text-2xl font-bold text-black mb-2 flex items-center gap-2">
         <Hand className="w-6 h-6" />

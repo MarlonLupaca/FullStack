@@ -1,45 +1,53 @@
 import RatingStars from './RatingStars';
 
 const ProductInformation = ({ product, discountAmount, discountPercentage }) => {
+  if (!product) return null;
+
+  const name = product.name || '';
+  const rating = typeof product.rating === 'number' ? product.rating : 0;
+  const reviewCount = product.reviewCount || 0;
+  const price = typeof product.price === 'number' ? product.price : 0;
+  const discount = parseInt(product.discount) || 0;
+  const stock = typeof product.stock === 'number' ? product.stock : 0;
+  const description = product.description || '';
+
+  const finalPrice = price - price * (discount / 100);
+  const discountValue = price * (discount / 100);
+
   return (
     <div className="bg-white rounded-xl shadow-sm p-6 mb-6">
-      <h1 className="text-2xl md:text-3xl font-bold text-gray-800">{product.name}</h1>
+      <h1 className="text-2xl md:text-3xl font-bold text-gray-800">{name}</h1>
       <div className="flex items-center mt-2">
-        <RatingStars rating={product.rating} />
+        <RatingStars rating={rating} />
         <span className="text-sm text-gray-500 ml-2">
-          {product.rating.toFixed(1)} ({product.reviewCount} valoraciones)
+          {rating.toFixed(1)} ({reviewCount} valoraciones)
         </span>
       </div>
       <div className="mt-6">
         <div className="flex items-baseline">
-          <span className="text-3xl font-bold text-teal-600">
-            S/ {(product.price - product.price * (parseInt(product.discount) / 100)).toFixed(2)}
-          </span>
-          {product.discount != 0 && (
-            <span className="ml-3 line-through text-gray-500">S/ {product.price.toFixed(2)}</span>
-          )}
+          <span className="text-3xl font-bold text-teal-600">S/ {finalPrice.toFixed(2)}</span>
+          {discount !== 0 && <span className="ml-3 line-through text-gray-500">S/ {price.toFixed(2)}</span>}
         </div>
-        {product.discount != 0 && (
+        {discount !== 0 && (
           <div className="mt-1 inline-block bg-red-50 text-red-500 font-medium text-sm px-3 py-1 rounded-md">
-            Ahorras S/ {(product.price * (parseInt(product.discount) / 100)).toFixed(2)} ({product.discount} de
-            descuento)
+            Ahorras S/ {discountValue.toFixed(2)} ({discount}% de descuento)
           </div>
         )}
       </div>
       <div className="mt-4 flex items-center">
         <span
           className={`text-sm px-3 py-1 rounded-full ${
-            product.stock > 10
+            stock > 10
               ? 'bg-green-50 text-green-600'
-              : product.stock > 0
+              : stock > 0
               ? 'bg-orange-50 text-orange-500'
               : 'bg-red-50 text-red-500'
           }`}
         >
-          {product.stock > 10 ? 'En stock' : product.stock > 0 ? `¡Solo quedan ${product.stock} unidades!` : 'Agotado'}
+          {stock > 10 ? 'En stock' : stock > 0 ? `¡Solo quedan ${stock} unidades!` : 'Agotado'}
         </span>
       </div>
-      <p className="mt-4 text-gray-600 leading-relaxed">{product.description}</p>
+      <p className="mt-4 text-gray-600 leading-relaxed">{description}</p>
     </div>
   );
 };

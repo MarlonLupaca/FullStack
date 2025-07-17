@@ -1,14 +1,12 @@
-import React from "react";
+import React from 'react';
 
 const ProductsHeader = ({ total, onSortChange }) => {
   return (
-    <div className="flex flex-wrap justify-between items-center mb-6 pb-4 border-b border-gray-200">
-      <h2 className="text-2xl font-bold text-gray-800">
-        Productos Ecológicos{" "}
-        <span className="text-sm font-normal text-gray-500">
-          ({total} productos)
-        </span>
-      </h2>
+    <div className="flex flex-wrap justify-between items-center mb-2 pb-4">
+      <p className="text-2xl font-bold text-gray-800 flex lg:block flex-col gap-1 lg:mb-0 mb-4">
+        <span>Productos Ecológicos</span>
+        <span className="text-sm font-normal text-gray-500 ml-3">({total} productos)</span>
+      </p>
 
       <div className="flex items-center">
         <label htmlFor="sort" className="mr-2 text-gray-600">

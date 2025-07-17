@@ -5,26 +5,26 @@ services:
   frontend:
     build: ./EE_Frontend
     ports:
-      - '3000:3000'
+      - '3000:3000' # Público
     depends_on:
       - api-gateway
     environment:
-      - NEXT_PUBLIC_API_BASE_URL=http://api-gateway:8080
+      - NEXT_PUBLIC_API_BASE_URL=http://31.97.86.247:8080
     restart: unless-stopped
 
   # ─────────────── BACKEND ────────────────
   api-gateway:
-    build: ./EE_Backend/api-Gateway
+    build: ./EE_Backend/api-gateway
     ports:
-      - '8080:8080'
+      - '8080:8080' # Público
     depends_on:
       - eureka-server
     restart: unless-stopped
 
   auth-service:
     build: ./EE_Backend/auth-service
-    ports:
-      - '8081:8081'
+    expose:
+      - '8081'
     depends_on:
       - mysql
       - eureka-server
@@ -36,8 +36,8 @@ services:
 
   chat-service:
     build: ./EE_Backend/chat-service
-    ports:
-      - '8083:8083'
+    expose:
+      - '8083'
     depends_on:
       - mysql
       - eureka-server
@@ -49,8 +49,8 @@ services:
 
   client-service:
     build: ./EE_Backend/client-service
-    ports:
-      - '8084:8084'
+    expose:
+      - '8084'
     depends_on:
       - mysql
       - eureka-server
@@ -62,8 +62,8 @@ services:
 
   eureka-server:
     build: ./EE_Backend/eureka-server
-    ports:
-      - '8761:8761'
+    expose:
+      - '8761'
     restart: unless-stopped
     healthcheck:
       test: ['CMD', 'curl', '-f', 'http://localhost:8761/actuator/health']
@@ -73,8 +73,8 @@ services:
 
   event-service:
     build: ./EE_Backend/event-service
-    ports:
-      - '8087:8087'
+    expose:
+      - '8087'
     depends_on:
       - mysql
       - eureka-server
@@ -86,8 +86,8 @@ services:
 
   orchestrator-service:
     build: ./EE_Backend/orchestrator-service
-    ports:
-      - '8099:8099'
+    expose:
+      - '8099'
     depends_on:
       - mysql
       - eureka-server
@@ -99,8 +99,8 @@ services:
 
   order-pay-service:
     build: ./EE_Backend/order-pay-service
-    ports:
-      - '8088:8088'
+    expose:
+      - '8088'
     depends_on:
       - mysql
       - eureka-server
@@ -112,8 +112,8 @@ services:
 
   product-service:
     build: ./EE_Backend/product-service
-    ports:
-      - '8089:8089'
+    expose:
+      - '8089'
     depends_on:
       - mysql
       - eureka-server
@@ -126,8 +126,8 @@ services:
   # ─────────────── MYSQL ────────────────
   mysql:
     image: mysql:8
-    ports:
-      - '3307:3306'
+    expose:
+      - '3306' # Solo accesible internamente
     environment:
       MYSQL_ROOT_PASSWORD: ecommerce123
       MYSQL_DATABASE: EcommerceDB

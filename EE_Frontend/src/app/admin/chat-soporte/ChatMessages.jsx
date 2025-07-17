@@ -45,7 +45,7 @@ const ChatMessages = ({ ticketId, activeTicket, onSendMessage }) => {
     if (!ticketId) return;
 
     const client = new Client({
-      brokerURL: `ws://localhost:8080/ws-chat?email=admin@gmail.com&username=admin&rol=ADMIN`,
+      brokerURL: `ws://31.97.86.247:8080/ws-chat?email=admin@gmail.com&username=admin&rol=ADMIN`,
       reconnectDelay: 5000,
       onConnect: () => {
         const sub = client.subscribe(`/topic/ticket/${ticketId}`, (message) => {

@@ -124,7 +124,7 @@ const EcommerceSupportChat = () => {
   }, []);
 
   useEffect(() => {
-    const socketUrl = `ws://localhost:8080/ws-chat?email=admin@gmail.com&username=admin&rol=ADMIN`;
+    const socketUrl = `ws://31.97.86.247:8080/ws-chat?email=admin@gmail.com&username=admin&rol=ADMIN`;
     const stompClient = new Client({
       brokerURL: socketUrl,
       reconnectDelay: 5000,

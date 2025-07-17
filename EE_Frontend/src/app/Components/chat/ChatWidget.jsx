@@ -33,7 +33,7 @@ const ChatWidget = () => {
   useEffect(() => {
     if (!isAuthenticated) return;
 
-    const socketUrl = `ws://localhost:8080/ws-chat?email=${encodeURIComponent(email)}&username=${encodeURIComponent(
+    const socketUrl = `ws://31.97.86.247:8080/ws-chat?email=${encodeURIComponent(email)}&username=${encodeURIComponent(
       name
     )}&rol=CLIENT`;
     const emailSafe = email.replace('@', '_at_');

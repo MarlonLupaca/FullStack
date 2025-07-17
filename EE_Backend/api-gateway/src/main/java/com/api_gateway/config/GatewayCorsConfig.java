@@ -20,7 +20,7 @@ public class GatewayCorsConfig {
         CorsConfiguration corsConfig = new CorsConfiguration();
         corsConfig.setAllowCredentials(true);
         corsConfig.setAllowedOrigins(Arrays.asList(
-                "http://localhost:3000",
+                "http://31.97.86.247:3000",
                 "http://localhost:3001",
                 "http://localhost:3002",
                 "http://localhost:3003",
